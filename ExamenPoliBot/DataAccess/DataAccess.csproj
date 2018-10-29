@@ -42,13 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crud\CrudFactory.cs" />
+    <Compile Include="Crud\LanguageCrudFactory.cs" />
+    <Compile Include="Crud\UserCrudFactory.cs" />
+    <Compile Include="Crud\WordCrudFactory.cs" />
     <Compile Include="Dao\SqlDao.cs" />
     <Compile Include="Dao\SqlOperation.cs" />
+    <Compile Include="Mapper\EntityMapper.cs" />
+    <Compile Include="Mapper\IObjectMapper.cs" />
+    <Compile Include="Mapper\ISqlStatements.cs" />
+    <Compile Include="Mapper\LanguageMapper.cs" />
+    <Compile Include="Mapper\UserMapper.cs" />
+    <Compile Include="Mapper\WordMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapper\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Entities_POJO\Entities_POJO.csproj">
       <Project>{73f5025e-aa7f-45ea-b2c3-af638222025e}</Project>

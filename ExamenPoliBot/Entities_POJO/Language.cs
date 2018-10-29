@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Entities_POJO
 {
@@ -28,6 +29,7 @@ namespace Entities_POJO
         }
 
         public string Languages { get; set; }
+        public string Populariry { get; set; }
 
     }
 }

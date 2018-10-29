@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities_POJO", "Entities_P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{53B3EDBE-815C-4E1F-AD80-96DD05D83813}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{5B6076F7-D8A4-4ECB-A20C-587C7A34D993}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{53B3EDBE-815C-4E1F-AD80-96DD05D83813}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B3EDBE-815C-4E1F-AD80-96DD05D83813}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53B3EDBE-815C-4E1F-AD80-96DD05D83813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B6076F7-D8A4-4ECB-A20C-587C7A34D993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B6076F7-D8A4-4ECB-A20C-587C7A34D993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B6076F7-D8A4-4ECB-A20C-587C7A34D993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B6076F7-D8A4-4ECB-A20C-587C7A34D993}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{2A79B9A3-6E5D-4DA3-A441-5EEB9BDF635F} = {B61FDF88-08A4-449B-B11C-948011191DD0}
 		{73F5025E-AA7F-45EA-B2C3-AF638222025E} = {D32B305F-17B9-475E-8838-2E9C48B5EE6C}
 		{53B3EDBE-815C-4E1F-AD80-96DD05D83813} = {FE18F6F8-A9F5-4B36-9367-BDC939702000}
+		{5B6076F7-D8A4-4ECB-A20C-587C7A34D993} = {746610E7-7FF2-4FB5-9E5B-7C90705EE335}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E2BD673-A9C9-4453-A2D7-3AE179621C0C}

@@ -60,12 +60,12 @@ namespace CoreApi
 
         public void Update(User user)
         {
-            crudUser.Update(user);
+            throw new NotImplementedException();
         }
 
         public void Delete(User user)
         {
-            crudUser.Delete(user);
+            throw new NotImplementedException();
         }
 
     }

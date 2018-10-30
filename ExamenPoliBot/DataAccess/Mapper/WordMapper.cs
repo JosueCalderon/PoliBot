@@ -30,7 +30,7 @@ namespace DataAccess.Mapper
             {
                 Words = GetStringValue(row, DbColWord),
                 Language = GetStringValue(row, DbColLanguage),
-                TranslationQuantity = GetStringValue(row, DbColTransQuantity)
+                TranslationQuantity = GetIntValue(row, DbColTransQuantity)
 
             };
 

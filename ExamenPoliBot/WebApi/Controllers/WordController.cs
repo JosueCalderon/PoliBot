@@ -1,29 +1,66 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using CoreApi;
+using Entities_POJO;
+using Exceptions;
+using WebApi.Models;
 
 namespace WebApi.Controllers
 {
     public class WordController : ApiController
     {
+        ApiResponse _apiResp = new ApiResponse();
+
         // GET: api/Word
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+
+            _apiResp = new ApiResponse();
+            var mng = new WordManager();
+            _apiResp.Data = mng.RetrieveAll();
+
+            return Ok(_apiResp);
         }
 
         // GET: api/Word/5
-        public string Get(int id)
+        public IHttpActionResult Get(string name)
         {
-            return "value";
+            try
+            {
+                var mng = new WordManager();
+                var word = new Word
+                {
+                    Words = name
+                };
+
+                word = mng.RetrieveById(word);
+                _apiResp = new ApiResponse { Data = word };
+
+                return Ok(_apiResp);
+            }
+            catch (BusinessException bex)
+            {
+                return InternalServerError(new Exception(bex.ExceptionID + "-" + bex.AppMessage.Message));
+            }
         }
 
         // POST: api/Word
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post(Word word)
         {
+
+            try
+            {
+                var mng = new WordManager();
+                mng.Create(word);
+
+                _apiResp = new ApiResponse { Message = "Action was executed." };
+
+                return Ok(_apiResp);
+            }
+            catch (BusinessException bex)
+            {
+                return InternalServerError(new Exception(bex.ExceptionID + "-" + bex.AppMessage.Message));
+            }
         }
 
         // PUT: api/Word/5

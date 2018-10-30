@@ -8,11 +8,11 @@ namespace DataAccess.Crud
 {
     public class AppMessagesCrudFactory : CrudFactory
     {
-        AppMessageMapper mapper;
+        AppMessageMapper _mapper;
 
         public AppMessagesCrudFactory()
         {
-            mapper = new AppMessageMapper();
+            _mapper = new AppMessageMapper();
             Dao = SqlDao.GetInstance();
         }
 
@@ -35,11 +35,11 @@ namespace DataAccess.Crud
         {
             var lstAppMessage = new List<T>();
 
-            var lstResult = Dao.ExecuteQueryProcedure(mapper.GetRetriveAllStatement());
+            var lstResult = Dao.ExecuteQueryProcedure(_mapper.GetRetriveAllStatement());
             var dictionary = new Dictionary<string, object>();
             if (lstResult.Count > 0)
             {
-                var objs = mapper.BuildObjects(lstResult);
+                var objs = _mapper.BuildObjects(lstResult);
                 foreach (var c in objs)
                 {
                     lstAppMessage.Add((T)Convert.ChangeType(c, typeof(T)));

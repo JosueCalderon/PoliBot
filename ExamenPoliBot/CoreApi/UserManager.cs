@@ -9,18 +9,18 @@ namespace CoreApi
     public class UserManager : BaseManager
     {
 
-        private UserCrudFactory crudUser;
+        private UserCrudFactory _crudUser;
 
         public UserManager()
         {
-            crudUser = new UserCrudFactory();
+            _crudUser = new UserCrudFactory();
         }
 
         public void Create(User user)
         {
             try
             {
-                var u = crudUser.Retrieve<User>(user);
+                var u = _crudUser.Retrieve<User>(user);
 
                 if (u != null)
                 {
@@ -36,7 +36,7 @@ namespace CoreApi
 
         public List<User> RetrieveAll()
         {
-            return crudUser.RetrieveAll<User>();
+            return _crudUser.RetrieveAll<User>();
         }
 
         public User RetrieveById(User user)
@@ -44,7 +44,7 @@ namespace CoreApi
             User c = null;
             try
             {
-                c = crudUser.Retrieve<User>(user);
+                c = _crudUser.Retrieve<User>(user);
                 if (c == null)
                 {
                     throw new BusinessException(1);

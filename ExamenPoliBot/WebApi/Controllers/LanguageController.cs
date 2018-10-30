@@ -1,18 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using CoreApi;
+using WebApi.Models;
+using Entities_POJO;
+using Exceptions;
 
 namespace WebApi.Controllers
 {
     public class LanguageController : ApiController
     {
+
+        ApiResponse _apiResp = new ApiResponse();
+
         // GET: api/Language
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+
+            _apiResp = new ApiResponse();
+            var mng = new LanguageManager();
+            _apiResp.Data = mng.RetrieveAll();
+
+            return Ok(_apiResp);
         }
 
         // GET: api/Language/5
@@ -22,8 +30,22 @@ namespace WebApi.Controllers
         }
 
         // POST: api/Language
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post(Language language)
         {
+
+            try
+            {
+                var mng = new LanguageManager();
+                mng.Create(language);
+
+                _apiResp = new ApiResponse { Message = "Action was executed." };
+
+                return Ok(_apiResp);
+            }
+            catch (BusinessException bex)
+            {
+                return InternalServerError(new Exception(bex.ExceptionID + "-" + bex.AppMessage.Message));
+            }
         }
 
         // PUT: api/Language/5

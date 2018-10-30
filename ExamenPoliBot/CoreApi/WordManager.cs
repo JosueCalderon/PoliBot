@@ -6,7 +6,7 @@ using Exceptions;
 
 namespace CoreApi
 {
-    class WordManager : BaseManager
+    public class WordManager : BaseManager
     {
 
         private WordCrudFactory crudWord;

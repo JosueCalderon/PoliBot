@@ -6,7 +6,7 @@ using Exceptions;
 
 namespace CoreApi
 {
-    class LanguageManager : BaseManager
+    public class LanguageManager : BaseManager
     {
 
         private LanguageCrudFactory crudLanguage;

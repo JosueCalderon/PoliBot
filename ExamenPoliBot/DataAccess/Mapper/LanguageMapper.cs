@@ -28,7 +28,7 @@ namespace DataAccess.Mapper
             var language = new Language
             {
                 Languages = GetStringValue(row, DbColLanguage),
-                Populariry = GetStringValue(row, DbColPopularity)
+                Popularity = GetStringValue(row, DbColPopularity)
             };
 
             return language;

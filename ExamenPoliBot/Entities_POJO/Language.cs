@@ -29,7 +29,7 @@ namespace Entities_POJO
         }
 
         public string Languages { get; set; }
-        public string Populariry { get; set; }
+        public string Popularity { get; set; }
 
     }
 }

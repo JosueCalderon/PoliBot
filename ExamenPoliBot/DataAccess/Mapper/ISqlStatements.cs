@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Dao;
+﻿using DataAccess.Dao;
 using Entities_POJO;
 
 namespace DataAccess.Mapper

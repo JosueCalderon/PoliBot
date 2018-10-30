@@ -1,4 +1,5 @@
 ﻿using System;
+using Entities_POJO;
 
 namespace Exceptions
 {

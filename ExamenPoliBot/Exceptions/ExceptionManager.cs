@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using Entities_POJO;
+using DataAccess.Crud;
 
 namespace Exceptions
 {
-    class ExceptionManager
+    public class ExceptionManager
     {
         public string PATH = @"C:\Windows\Temp\";
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DataAccess.Crud;
 using Entities_POJO;
+using Exceptions;
 
 namespace CoreApi
 {
@@ -23,8 +24,8 @@ namespace CoreApi
 
                 if (u != null)
                 {
-                    //Account already exist
-                    throw new BussinessException(4);
+                    //User already exist
+                    throw new BusinessException(2);
                 }
             }
             catch (Exception ex)
@@ -46,7 +47,7 @@ namespace CoreApi
                 c = crudUser.Retrieve<User>(user);
                 if (c == null)
                 {
-                    throw new BussinessException(4);
+                    throw new BusinessException(1);
                 }
             }
             catch (Exception ex)

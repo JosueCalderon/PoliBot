@@ -49,7 +49,12 @@ namespace DataAccess.Mapper
 
         public SqlOperation GetRetriveStatement(BaseEntity entity)
         {
-            throw new NotImplementedException();
+            var operation = new SqlOperation { ProcedureName = "RET_LANGUAGE_PR" };
+
+            var l = (Language)entity;
+            operation.AddVarcharParam(DbColLanguage, l.Languages);
+
+            return operation;
         }
 
         public SqlOperation GetRetriveAllStatement()

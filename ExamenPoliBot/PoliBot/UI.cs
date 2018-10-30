@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using Entities_POJO;
 
 namespace PoliBot
@@ -10,6 +11,8 @@ namespace PoliBot
     class UI
     {
         private static User user = new User();
+        private static Language language = new Language();
+        private static readonly LanguageManagement mngLanguage = new LanguageManagement();
         private static readonly UserManagement mngUser = new UserManagement();
 
         static void Main()
@@ -56,8 +59,7 @@ namespace PoliBot
             }
             else
             {
-                GeneralMenu();
-                GeneralMenu();
+                Console.WriteLine();
                 Console.WriteLine(" Welcome to poli-bot " + user.Name);
                 GeneralMenu();
             }
@@ -94,32 +96,88 @@ namespace PoliBot
             switch (popc)
             {
 
-                //case 1:
+                case 1:
 
-                //    CustomerMenu();
-                //    break;
+                    SelectLanguage();
+                    break;
 
-                //case 2:
+                case 2:
 
-                //    AccountMenu();
-                //    break;
+                    Console.WriteLine("Bye");
+                    break;
 
-                //case 3:
+                    //case 3:
 
-                //    AddressMenu();
-                //    break;
+                    //    AddressMenu();
+                    //    break;
 
-                //case 4:
+                    //case 4:
 
-                //    LocationMenu();
-                //    break;
+                    //    LocationMenu();
+                    //    break;
 
-                //case 5:
+                    //case 5:
 
-                //    CreditMenu();
-                //    break;
+                    //    CreditMenu();
+                    //    break;
 
             }
+
+        }
+
+        public static void SelectLanguage()
+        {
+
+            Console.WriteLine("************************************");
+            Console.WriteLine("********  WRITE LANGUAGE   *********");
+            Console.WriteLine("************************************");
+            Console.WriteLine();
+            Console.WriteLine("Type language: ");
+            language.Languages = Console.ReadLine();
+            language = mngLanguage.RetrieveById(language);
+
+            if (language == null)
+            {
+                Console.WriteLine();
+                Console.WriteLine("*********LANGUAGE DOESN'T EXIST**********");
+                Console.WriteLine();
+                Console.WriteLine("*************************************************************");
+                Console.WriteLine("**********   DO YOU WANT TO CREATE THIS LANGUAGE?  **********");
+                Console.WriteLine("*************************************************************");
+                Console.WriteLine();
+                Console.WriteLine("Type language again");
+                Console.WriteLine();
+                var info = Console.ReadLine();
+                var infoArray = info.Split(',');
+                language = new Language(infoArray);
+                Console.WriteLine();
+                mngLanguage.Create(language);
+                Console.WriteLine();
+                Console.WriteLine("Language was created");
+                Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("This language was created: " + language.Languages);
+                Console.WriteLine();
+
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Language selected: " + language.Languages);
+                Console.WriteLine();
+                Translate();
+            }
+
+        }
+
+        public static void Translate()
+        {
+
+            Console.WriteLine("************************************");
+            Console.WriteLine("********  WRITE WORD TO TRANSLATE  *********");
+            Console.WriteLine("************************************");
+            Console.WriteLine();
+            Console.WriteLine("Type word: ");
 
         }
     }

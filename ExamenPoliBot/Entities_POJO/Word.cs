@@ -18,7 +18,7 @@ namespace Entities_POJO
 
                 Words = info[0];
                 Language = info[1];
-                TranslationQuantity = info [2];
+                TranslationQuantity = 0;
 
             }
             else
@@ -29,7 +29,7 @@ namespace Entities_POJO
 
         public string Words { get; set; }
         public string Language {get; set; }
-        public string TranslationQuantity { get; set; }
+        public int TranslationQuantity { get; set; }
     }
 }
 

@@ -1,3 +1,7 @@
 
 *.sqlite
 *.xml
+*.ide
+*.ide-wal
+*.CopyComplete
+*.txt

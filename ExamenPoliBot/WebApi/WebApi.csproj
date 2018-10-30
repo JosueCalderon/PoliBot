@@ -182,8 +182,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\TranslationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WordController.cs" />
@@ -278,6 +280,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreApi\CoreApi.csproj">
+      <Project>{2a79b9a3-6e5d-4da3-a441-5eeb9bdf635f}</Project>
+      <Name>CoreApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities_POJO\Entities_POJO.csproj">
+      <Project>{73F5025E-AA7F-45EA-B2C3-AF638222025E}</Project>
+      <Name>Entities_POJO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+      <Project>{5B6076F7-D8A4-4ECB-A20C-587C7A34D993}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

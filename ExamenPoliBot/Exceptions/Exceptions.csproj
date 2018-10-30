@@ -49,6 +49,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{53b3edbe-815c-4e1f-ad80-96dd05d83813}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities_POJO\Entities_POJO.csproj">
       <Project>{73f5025e-aa7f-45ea-b2c3-af638222025e}</Project>
       <Name>Entities_POJO</Name>
